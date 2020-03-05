@@ -10,13 +10,16 @@ public class ScoreManager : MonoBehaviour
     public Vector3 Position;
     public int score;
     public int vida;
+    public Shader Selected;
+    public Sprite prefabSprite;
+
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
         vida = 20;
         UpdateHudText();
-        InvokeRepeating("SpawnObject", 2.0f, 2f);
+        InvokeRepeating("SpawnObject", 4.0f, 3.0f);
     }
 
     public void AddScore(){
@@ -36,7 +39,10 @@ public class ScoreManager : MonoBehaviour
     public void SpawnObject(){
         var obj = Instantiate(Prefab);
 
-        obj.transform.position = new Vector3(Random.Range(-260f,261f),Random.Range(0f,101f),0); //x: -260˜260 // y: 0˜100
+        obj.transform.position = new Vector3(Random.Range(-260f,261f),Random.Range(0f,30f),0); //x: -260˜260 // y: 0˜100
+        Debug.Log("hmm");
+        Debug.Log(obj.GetComponent<Sprite>());
+        Debug.Log(obj.GetComponent<SpriteRenderer>());
     }
 
     // Update is called once per frame
