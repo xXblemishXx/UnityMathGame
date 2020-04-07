@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour
         score = 0;
         vida = 20;
         UpdateHudText();
-        InvokeRepeating("SpawnObject", 4.0f, 3.0f);
+        InvokeRepeating("SpawnObject", 4.0f, 6.0f);
     }
 
     public void AddScore(){
